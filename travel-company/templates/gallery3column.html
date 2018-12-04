@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class=""><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<title>Galeri Örnek 1</title>
+	<!-- Standard Favicon -->
+	<link rel="icon" type="image/x-icon" href="{{ STATIC_URL }}static/images/baykus.png" />
+	<!-- For iPhone 4 Retina display: -->
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ STATIC_URL }}static/images//apple-touch-icon-114x114-precomposed.png">
+	<!-- For iPad: -->
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ STATIC_URL }}static/images//apple-touch-icon-72x72-precomposed.png">
+	<!-- For iPhone: -->
+	<link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}static/images//apple-touch-icon-57x57-precomposed.png">
+	<!-- Custom - Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}static/style.css">
+	<!--[if lt IE 9]>
+		<script src="js/html5/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body data-offset="200" data-spy="scroll" data-target=".ow-navigation">
+	<!-- LOADER -->
+	<div id="site-loader" class="load-complete">
+		<div class="loader">
+			<div class="loader-inner ball-triangle-path">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+	</div><!-- Loader /- -->
+	
+	<!-- Header -->	
+	<header class="header-main container-fluid no-padding">
+	<!-- SidePanel -->
+	<div id="slidepanel">
+		<!-- Top Header -->
+		<div class="header-top container-fluid no-padding">	
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-sm-6 col-xs-6">
+						<span>TrakyaTur HOŞGELDİNİZ</span>
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-6">
+						<ul>
+							<li><a href="/" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+							<li><a href="/" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+							<li><a href="/" title="GooglePlus"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+							<li><a href="/" title="Linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div><!-- Top Header /- -->
+		<!-- Middle Header /- -->
+		<div class="container header-middle">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="logo-block">
+						<a href="/"><img src="{{ STATIC_URL }}static/images/baykus.png" alt="logo" height="70" width="70"/><h1>TRAKYATUR</h1><span></span></a>
+					</div>
+				</div>
+				<div class="col-md-9 col-sm-12 col-xs-12">
+					<div class="header-contactinfo-block">
+						<div class="contactinfo-box">
+							<span class="icon icon-Pointer"></span>
+							<p>Tekİrdağ / Süleymanpaşa<span>Türkİye</span></p>
+						</div>
+						<div class="contactinfo-box">
+							<span class="icon icon-Time"></span>
+							<p>Pazartesİ-Cumartesİ : 9:00 AM - 7:00 PM<span>Pazar : Kapalı</span></p>
+						</div>
+						<div class="contactinfo-box">
+							<span class="icon icon-Phone2"></span>
+							<p>
+								<a href="tel:02822618438" title="02822618438">0 (282) 261 84 38</a>
+								<a href="mailto:info@trakyatur.com" title="info@trakyatur.com">info@trakyatur.com</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!-- Middle Header /- -->
+	</div><!-- SidePanel /- -->
+
+	<div class="menu-block">
+		<div class="container">
+			<div class="row">
+				<!-- Navigation -->
+				<nav class="navbar ow-navigation">
+					<div id="loginpanel" class="desktop-hide">
+						<div class="right" id="toggle">
+							<a id="slideit" href="#slidepanel"><i class="fo-icons fa fa-inbox"></i></a>
+							<a id="closeit" href="#slidepanel"><i class="fo-icons fa fa-close"></i></a>
+						</div>
+					</div>
+					<div class="col-md-9">
+						<div class="navbar-header">
+							<button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a title="Logo" href="index.html" class="navbar-brand"></a>
+							<a href="/" class="mobile-logo" title="Logo"><h3>TrakyaTur</h3></a>
+						</div>
+						<div class="navbar-collapse collapse" id="navbar">
+							<ul class="nav navbar-nav">
+								<li class="dropdown active">
+									<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" title="Home" href="/">Anasayfa</a>
+									<i class="ddl-switch fa fa-angle-down"></i>
+									<ul class="dropdown-menu">
+										<li><a title="Anasayfa1" href="/anasayfa-1">Anasayfa Örneğİ 1</a></li>
+										<li><a title="Anasayfa2" href="/anasayfa-2">Anasayfa Örneği 2</a></li>
+										<li><a title="Popüler" href="/">Popüler</a></li>
+									</ul>
+								</li>
+								<li><a title="About Us" href="/hakkimizda">Hakkımızda</a></li>
+								<li class="dropdown">
+									<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" title="Destination" href="destination.html">Turlar</a>
+									<i class="ddl-switch fa fa-angle-down"></i>
+{#									<ul class="dropdown-menu">#}
+{#										<li><a title="Destination Detail" href="destination-details.html">Otel Konaklama</a></li>#}
+{#									</ul>#}
+								</li>
+                                <li class="dropdown">
+									<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" title="Destination" href="destination.html">Konaklama</a>
+									<i class="ddl-switch fa fa-angle-down"></i>
+{#									<ul class="dropdown-menu">#}
+{#										<li><a title="Destination Detail" href="destination-details.html">Otel Konaklama</a></li>#}
+{#									</ul>#}
+								</li>
+								<li class="dropdown">
+									<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" title="Gallery" href="#">Galerİ</a>
+									<i class="ddl-switch fa fa-angle-down"></i>
+									<ul class="dropdown-menu">
+										<li><a title="Gallery 3 Column" href="/galeri-1">Galerİ 3 Sütun Örnek Sayfa</a></li>
+										<li><a title="Gallery 4 Column" href="/galeri-2">Galerİ 4 Sütun Örnek Sayfa</a></li>
+									</ul>
+								</li>
+								<li class="dropdown">
+									<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" title="Blog" href="blog.html">Blog</a>
+									<i class="ddl-switch fa fa-angle-down"></i>
+									<ul class="dropdown-menu">
+										<li><a title="Blog Single" href="/">Haber Başlıkları</a></li>
+									</ul>
+								</li>
+{#								<li class="dropdown">#}
+{#									<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" title="Pages" href="#">Pages</a>#}
+{#									<i class="ddl-switch fa fa-angle-down"></i>#}
+{#									<ul class="dropdown-menu">#}
+{#									<li><a title="Destination Detail" href="destination-details.html">Destination Detail</a></li>#}
+{#									</ul>#}
+{#								</li>#}
+								<li><a title="Contact" href="/iletisim">İLETİŞİM</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="input-group menusearch">
+						<input type="text" placeholder="Fırsatlar" class="form-control">
+						<span  class="input-group-btn">
+							<button type="button" title="Search" class="btn"><span class="icon_search" aria-hidden="true"></span></button>
+						</span>
+					</div>
+				</nav><!-- Navigation /- -->
+			</div>
+		</div>
+	</div>
+</header><!-- Header /- -->
+	<main class="site-main page-spacing">
+		<!-- PageBanner -->
+		<div class="container-fluid no-padding pagebanner gallery3column">
+			<div class="container">
+				<h3>Galerİ</h3>
+			</div>
+		</div><!-- PageBanner /- -->
+		<div class="container gallery-section">
+			<div class="section-padding"></div>
+			<div class="section-header">
+				<h3>TrakyaTur Galerİ</h3>
+				<span>Hayalleriniz TrakyaTur İle Gerçekleşiyor</span>
+			</div>
+			<ul class="portfolio-list">
+				<li class="col-md-4 col-sm-4 col-xs-4">
+					<div class="content-image-block">
+						<a href=".#"><img src="{{ STATIC_URL }}static/images/gallery3.1.jpg" alt="gallery" width="370" height="320"/></a>
+						<div class="content-block-icon">
+							<a href="{{ STATIC_URL }}static/images/gallery3.1.jpg" class="gallery-popup"><i class="fa fa-search"></i></a>
+						</div>
+					</div>
+				</li>
+				<li class="col-md-4 col-sm-4 col-xs-4">
+					<div class="content-image-block">
+						<a href=".#"><img src="{{ STATIC_URL }}static/images/gallery3.2.jpg" alt="gallery" width="370" height="320"/></a>
+						<div class="content-block-icon">
+							<a href="{{ STATIC_URL }}static/images/gallery2.jpg" class="gallery-popup"><i class="fa fa-search"></i></a>
+						</div>
+					</div>
+				</li>
+				<li class="col-md-4 col-sm-4 col-xs-4">
+					<div class="content-image-block">
+						<a href=".#"><img src="{{ STATIC_URL }}static/images/gallery3.3.jpg" alt="gallery" width="370" height="320"/></a>
+						<div class="content-block-icon">
+							<a href="{{ STATIC_URL }}static/images/gallery3.3.jpg" class="gallery-popup"><i class="fa fa-search"></i></a>
+						</div>
+					</div>
+				</li>
+				<li class="col-md-4 col-sm-4 col-xs-4">
+					<div class="content-image-block">
+						<a href=".#"><img src="{{ STATIC_URL }}static/images/gallery3.4.jpg" alt="gallery" width="370" height="320"/></a>
+						<div class="content-block-icon">
+							<a href="{{ STATIC_URL }}static/images/gallery3.4.jpg" class="gallery-popup"><i class="fa fa-search"></i></a>
+						</div>
+					</div>
+				</li>
+				<li class="col-md-4 col-sm-4 col-xs-4">
+					<div class="content-image-block">
+						<a href=".#"><img src="{{ STATIC_URL }}static/images/gallery3.5.jpg" alt="gallery" width="370" height="320"/></a>
+						<div class="content-block-icon">
+							<a href="{{ STATIC_URL }}static/images/gallery3.5.jpg" class="gallery-popup"><i class="fa fa-search"></i></a>
+						</div>
+					</div>
+				</li>
+				<li class="col-md-4 col-sm-4 col-xs-4">
+					<div class="content-image-block">
+						<a href=".#"><img src="{{ STATIC_URL }}static/images/gallery3.6.jpg" alt="gallery" width="370" height="320"/></a>
+						<div class="content-block-icon">
+							<a href="{{ STATIC_URL }}static/images/gallery3.6.jpg" class="gallery-popup"><i class="fa fa-search"></i></a>
+						</div>
+					</div>
+				</li>
+				<li class="col-md-4 col-sm-4 col-xs-4">
+					<div class="content-image-block">
+						<a href=".#"><img src="{{ STATIC_URL }}static/images/gallery3.7.jpg" alt="gallery" width="370" height="320"/></a>
+						<div class="content-block-icon">
+							<a href="{{ STATIC_URL }}static/images/gallery3.7.jpg" class="gallery-popup"><i class="fa fa-search"></i></a>
+						</div>
+					</div>
+				</li>
+				<li class="col-md-4 col-sm-4 col-xs-4">
+					<div class="content-image-block">
+						<a href=".#"><img src="{{ STATIC_URL }}static/images/gallery3.8.jpg" alt="gallery" width="370" height="320"/></a>
+						<div class="content-block-icon">
+							<a href="{{ STATIC_URL }}static/images/gallery3.8.jpg" class="gallery-popup"><i class="fa fa-search"></i></a>
+						</div>
+					</div>
+				</li>
+				<li class="col-md-4 col-sm-4 col-xs-4">
+					<div class="content-image-block">
+						<a href=".#"><img src="{{ STATIC_URL }}static/images/gallery3.9.jpg" alt="gallery" width="370" height="320"/></a>
+						<div class="content-block-icon">
+							<a href="{{ STATIC_URL }}static/images/gallery3.9.jpg" class="gallery-popup"><i class="fa fa-search"></i></a>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<nav class="ow-pagination">
+				<ul class="pagination">
+					<li class="active"><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#"><i aria-hidden="true" class="fa fa-angle-double-right"></i></a></li>
+				</ul>
+			</nav>
+			<div class="section-padding"></div>
+		</div>
+	</main>
+	
+	<!-- Footer Main -->
+	<footer class="footer-main container-fluid no-padding">
+		<div class="footer-widgetblock">
+			<!-- Container -->
+			<div class="container">
+				<div class="row">
+					<!-- Widget About -->
+					<aside class="col-md-3 col-sm-6 col-xs-6 ftr-widget about_widget">
+						<h3 class="widget-title">Hakkımızda <span>Genel</span></h3>
+						<p>Turizm sektöründeki 29 yıllık deneyimimizle , hizmetinizdeyiz. Özenle seçilmiş keyifli bir tatil için deneyimli seyahat danışmanlarımız , bölgelere güvenli ve konforlu bir şekilde ulaşımınızı sağlayacak otobüslerimiz ve profesyonel şoförlerimiz, otobüs yolculuklarınız sırasında sizlere hizmet verecek tur liderlerimiz ile hizmetinizdeyiz</p>
+						<ul>
+							<li><a href="/" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+							<li><a href="/" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+							<li><a href="/" title="google-plus"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+							<li><a href="/" title="linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+						</ul>
+					</aside><!-- Widget About /- -->
+
+					<!-- Widget Link -->
+					<aside class="col-md-2 col-sm-6 col-xs-6 ftr-widget link_widget">
+						<h3 class="widget-title">Faydalı <span> Lİnkler</span></h3>
+						<a href="/hakkimizda" title="About Us">Hakkımızda</a>
+						<a href="/" title="Our Packages">Hizmetlerimiz</a>
+						<a href="/" title="Popular Destination">Turlar</a>
+						<a href="/" title="Top Destination">Oteller</a>
+						<a href="/" title="Latest News">Popüler</a>
+						<a href="/" title="Our Gallery">Galeri</a>
+						<a href="/iletisim" title="Contact Us">İletişim</a>
+					</aside><!-- Widget Link /- -->
+
+					<!-- Widget OpeningHours -->
+					<aside class="col-md-4 col-sm-6 col-xs-6 ftr-widget openinghours_widget">
+						<h3 class="widget-title">Açık Olduğumuz <span> Saatler</span></h3>
+						<p>Pazartesi<span>9:00AM - 6:00PM</span></p>
+						<p>Salı<span>9:00AM - 6:00PM</span></p>
+						<p>Çarşamba<span>9:00AM - 6:00PM</span></p>
+						<p>Perşmebe<span>9:00AM - 6:00PM</span></p>
+						<p>Cuma<span>9:00AM - 6:00PM</span></p>
+						<p>Cumartesi<span>9:00AM - 2:00PM</span></p>
+					</aside><!-- Widget OpeningHours/- -->
+
+					<!-- Widget PopularDestination -->
+					<aside class="col-md-3 col-sm-6 col-xs-6 ftr-widget populardestination_widget">
+						<h3 class="widget-title">Popüler <span> Turlarımız</span></h3>
+						<ul>
+							<li><a title="instagram" href="#"><img width="130" height="130" alt="destinaion1" src="{{ STATIC_URL }}static/images/ftr-populardestinaion1.jpg"></a></li>
+							<li><a title="instagram" href="#"><img width="130" height="130" alt="destinaion1" src="{{ STATIC_URL }}static/images/ftr-populardestinaion2.jpg"></a></li>
+							<li><a title="instagram" href="#"><img width="130" height="130" alt="destinaion1" src="{{ STATIC_URL }}static/images/ftr-populardestinaion3.jpg"></a></li>
+							<li><a title="instagram" href="#"><img width="130" height="130" alt="destinaion1" src="{{ STATIC_URL }}static/images/ftr-populardestinaion4.jpg"></a></li>
+						</ul>
+					</aside><!-- Widget PopularDestination /- -->
+					<div class="col-md-12 ftr-newsletter">
+						<h3>BİZDEN Haberdar Olmak İster MİSİNİZ?</h3>
+						<form>
+							<div class="input-group">
+								<input type="text" placeholder="Enter your email address" class="form-control" required>
+								<span class="input-group-btn">
+									<button type="submit" class="btn">KAYDOL</button>
+								</span>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div><!-- Container /- -->
+		</div><!-- Footer WidgetBlock /- -->
+
+		<!-- Footer Bottom -->
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<span>DCK &copy; 2017 Tüm Hakları Saklıdır.</span>
+					</div>
+					<div class="col-md-9">
+						<div class="footer-menu">
+							<nav class="navbar ow-navigation">
+								<div class="navbar-header">
+									<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar2" aria-expanded="false" aria-controls="navbar">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
+								</div>
+								<div id="navbar2" class="navbar-collapse collapse">
+									<ul class="nav navbar-nav">
+										<li><a href="/" title="Home">Anasayfa</a></li>
+{#										<li><a href="aboutus.html" title="About">About</a></li>#}
+{#										<li><a href="#" title="Services">Services</a></li>#}
+{#										<li><a href="#" title="Privacy policy">Privacy policy</a></li>#}
+{#										<li><a href="#" title="Terms & Condition">Terms & Condition</a></li>#}
+									</ul>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!-- Footer Bottom /- -->
+	</footer><!-- Footer /- -->
+	
+	<!-- JQuery v1.11.3 -->	
+	<script src="{{ STATIC_URL }}static/js/jquery.min.js"></script>
+	<script src="{{ STATIC_URL }}static/js/jquery.ddslick.min.js"></script><!-- For Option Image & decription  -->
+	<script src="{{ STATIC_URL }}static/libraries/lib.js"></script><!-- Bootstrap JS File v3.3.5 -->
+	<script src="{{ STATIC_URL }}static/libraries/bootstrap-datetimepicker.min.js"></script><!-- Bootstrap DateTimePicker -->
+	<script src="{{ STATIC_URL }}static/libraries/lightslider-master/lightslider.js"></script><!-- LightSlider -->
+{#	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script><!-- Library - Google Map API -->#}
+	
+	<!-- Library - Theme JS -->
+	<script src="{{ STATIC_URL }}static/js/functions.js"></script>
+</body>
+</html>
