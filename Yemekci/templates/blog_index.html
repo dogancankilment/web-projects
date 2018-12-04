@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>
+                Blog List
+            </title>
+            </head>
+        <body>
+            <!--<a href="/blog/new_blog">Yeni Blog Ekle</a>-->
+            {% for b in blogs %}
+                <p>ID: {{b.id}} Baslik: {{b.baslik}}  Icerik:{{b.icerik}}
+	        <!--- <a href="/blog/edit_blog/{{blog.id}}">Duzenle</a>-->
+		</p>
+            {% endfor %}
+        </body>
+    </html>
