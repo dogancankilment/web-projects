@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'OxygenBold';
+    src: url('OxygenBold.eot');
+    src: url('OxygenBold.eot') format('embedded-opentype'),
+         url('OxygenBold.woff2') format('woff2'),
+         url('OxygenBold.woff') format('woff'),
+         url('OxygenBold.ttf') format('truetype'),
+         url('OxygenBold.svg#OxygenBold') format('svg');
+}

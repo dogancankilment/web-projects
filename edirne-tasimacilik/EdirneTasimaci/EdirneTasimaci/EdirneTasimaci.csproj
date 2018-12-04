@@ -1,0 +1,752 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E7694DD4-250B-45FF-B46D-E8B1257898C9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EdirneTasimaci</RootNamespace>
+    <AssemblyName>EdirneTasimaci</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="css\animate.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\owl.carousel.css" />
+    <Content Include="css\pe-icon-7-stroke.css" />
+    <Content Include="css\reset.css" />
+    <Content Include="css\responsive.css" />
+    <Content Include="css\uikit.css" />
+    <Content Include="css\venobox.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\Lato-Semibold.css" />
+    <Content Include="fonts\Lato-Semibold.svg" />
+    <Content Include="fonts\Oxygen.css" />
+    <Content Include="fonts\Oxygen.svg" />
+    <Content Include="fonts\OxygenBold.css" />
+    <Content Include="fonts\OxygenBold.svg" />
+    <Content Include="fonts\Pe-icon-7-stroke.svg" />
+    <Content Include="fonts\RobotoBold.css" />
+    <Content Include="fonts\RobotoBold.svg" />
+    <Content Include="fonts\RobotoLight.css" />
+    <Content Include="fonts\RobotoLight.svg" />
+    <Content Include="fonts\RobotoLightItalic.css" />
+    <Content Include="fonts\RobotoLightItalic.svg" />
+    <Content Include="fonts\RobotoMedium.css" />
+    <Content Include="fonts\RobotoMedium.svg" />
+    <Content Include="fonts\RobotoRegular.css" />
+    <Content Include="fonts\RobotoRegular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="images\antika.png" />
+    <Content Include="images\depo.png" />
+    <Content Include="images\dershane.png" />
+    <Content Include="images\ekspertiz.png" />
+    <Content Include="images\evdeneve.png" />
+    <Content Include="images\footerback.png" />
+    <Content Include="images\fuar.png" />
+    <Content Include="images\iletisim.png" />
+    <Content Include="images\kamu.png" />
+    <Content Include="images\kasa.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\3dbg.jpg" />
+    <Content Include="images\3dlayer_1.png" />
+    <Content Include="images\3dlayer_2.png" />
+    <Content Include="images\3dlayer_3.png" />
+    <Content Include="images\3dlayer_4.png" />
+    <Content Include="images\3dlayer_5.png" />
+    <Content Include="images\3dlayer_6.png" />
+    <Content Include="images\about-client-eight.png" />
+    <Content Include="images\about-client-eleven.png" />
+    <Content Include="images\about-client-five.png" />
+    <Content Include="images\about-client-four.png" />
+    <Content Include="images\about-client-nine.png" />
+    <Content Include="images\about-client-one.png" />
+    <Content Include="images\about-client-says-bg.jpg" />
+    <Content Include="images\about-client-seven.png" />
+    <Content Include="images\about-client-six.png" />
+    <Content Include="images\about-client-ten.png" />
+    <Content Include="images\about-client-three.png" />
+    <Content Include="images\about-client-twelve.png" />
+    <Content Include="images\about-client-two.png" />
+    <Content Include="images\about-we-are-best-1.png" />
+    <Content Include="images\about-we-are-best-2.png" />
+    <Content Include="images\about-we-are-best-3.png" />
+    <Content Include="images\admin-icon.png" />
+    <Content Include="images\apple-touch-icon-precomposed.png" />
+    <Content Include="images\apple.png" />
+    <Content Include="images\bg1.jpg" />
+    <Content Include="images\bg2.jpg" />
+    <Content Include="images\bg3.jpg" />
+    <Content Include="images\bg4.jpg" />
+    <Content Include="images\blog-post-five.jpg" />
+    <Content Include="images\blog-post-four.jpg" />
+    <Content Include="images\blog-post-one.jpg" />
+    <Content Include="images\blog-post-three.jpg" />
+    <Content Include="images\blog-post-two.jpg" />
+    <Content Include="images\blog\comments1.jpg" />
+    <Content Include="images\blog\comments2.jpg" />
+    <Content Include="images\blog\comments3.jpg" />
+    <Content Include="images\blog\comments4.jpg" />
+    <Content Include="images\blog\comments5.jpg" />
+    <Content Include="images\blog\comments6.jpg" />
+    <Content Include="images\blog\s-user.jpg" />
+    <Content Include="images\boat.png" />
+    <Content Include="images\brances.png" />
+    <Content Include="images\breadcrumb-nice-title-one.png" />
+    <Content Include="images\breadcrumb-one.jpg" />
+    <Content Include="images\calender-icon.png" />
+    <Content Include="images\call-us-on.png" />
+    <Content Include="images\check.png" />
+    <Content Include="images\citybg.jpg" />
+    <Content Include="images\client-logo-five.jpg" />
+    <Content Include="images\client-logo-four.jpg" />
+    <Content Include="images\client-logo-one.jpg" />
+    <Content Include="images\client-logo-three.jpg" />
+    <Content Include="images\client-logo-two.jpg" />
+    <Content Include="images\client-says-bg-2.jpg" />
+    <Content Include="images\client-says-bg.jpg" />
+    <Content Include="images\client-says-client-1.jpg" />
+    <Content Include="images\client-says-client-2.jpg" />
+    <Content Include="images\clock.png" />
+    <Content Include="images\clock2.png" />
+    <Content Include="images\close.gif" />
+    <Content Include="images\cloud1.png" />
+    <Content Include="images\cloud2.png" />
+    <Content Include="images\cloud3.png" />
+    <Content Include="images\cloud4.png" />
+    <Content Include="images\coconuts.png" />
+    <Content Include="images\comment-blog-white.png" />
+    <Content Include="images\comment-blog.png" />
+    <Content Include="images\counter-bg-home-two.jpg" />
+    <Content Include="images\counter-bg.jpg" />
+    <Content Include="images\countries-covered.png" />
+    <Content Include="images\customer-service-hover.png" />
+    <Content Include="images\customer-service.png" />
+    <Content Include="images\cycle1.png" />
+    <Content Include="images\darkblurbg.jpg" />
+    <Content Include="images\doublearrow2.png" />
+    <Content Include="images\dropdown_bg.png" />
+    <Content Include="images\dummy.png" />
+    <Content Include="images\envelope.png" />
+    <Content Include="images\error-404.png" />
+    <Content Include="images\faq-accordion-lock-click.png" />
+    <Content Include="images\faq-accordion-lock.png" />
+    <Content Include="images\favicon.ico" />
+    <Content Include="images\favicon.png" />
+    <Content Include="images\flickr-eight.jpg" />
+    <Content Include="images\flickr-eleven.jpg" />
+    <Content Include="images\flickr-fifteen.jpg" />
+    <Content Include="images\flickr-five.jpg" />
+    <Content Include="images\flickr-four.jpg" />
+    <Content Include="images\flickr-fourteen.jpg" />
+    <Content Include="images\flickr-nine.jpg" />
+    <Content Include="images\flickr-one.jpg" />
+    <Content Include="images\flickr-seven.jpg" />
+    <Content Include="images\flickr-six.jpg" />
+    <Content Include="images\flickr-sixteen.jpg" />
+    <Content Include="images\flickr-ten.jpg" />
+    <Content Include="images\flickr-thirteen.jpg" />
+    <Content Include="images\flickr-three.jpg" />
+    <Content Include="images\flickr-twelve.jpg" />
+    <Content Include="images\flickr-two.jpg" />
+    <Content Include="images\footer-logo.png" />
+    <Content Include="images\footer-top.jpg" />
+    <Content Include="images\footer_fixed_img.png" />
+    <Content Include="images\forest1.jpg" />
+    <Content Include="images\forwarding-service.png" />
+    <Content Include="images\from-our-blog-1.jpg" />
+    <Content Include="images\from-our-blog-2.jpg" />
+    <Content Include="images\from-our-blog-5.jpg" />
+    <Content Include="images\from-our-blog-6.jpg" />
+    <Content Include="images\from-our-blog-7.jpg" />
+    <Content Include="images\from_our_blog_two_admin.png" />
+    <Content Include="images\from_our_blog_two_calender.png" />
+    <Content Include="images\fullslide1-320x200.jpg" />
+    <Content Include="images\fullslide1.jpg" />
+    <Content Include="images\fullslide2-320x200.jpg" />
+    <Content Include="images\fullslide2.jpg" />
+    <Content Include="images\fullslide6-320x200.jpg" />
+    <Content Include="images\fullslide6.jpg" />
+    <Content Include="images\fullslide7-320x200.jpg" />
+    <Content Include="images\fullslide7.jpg" />
+    <Content Include="images\fullslide8-320x200.jpg" />
+    <Content Include="images\fullslide8.jpg" />
+    <Content Include="images\get-a-quote-services.jpg" />
+    <Content Include="images\get-a-quote.jpg" />
+    <Content Include="images\glare.png" />
+    <Content Include="images\good-tracking.png" />
+    <Content Include="images\goods-carrier.jpg" />
+    <Content Include="images\google-pin-one.png" />
+    <Content Include="images\graph.png" />
+    <Content Include="images\greenbg.jpg" />
+    <Content Include="images\greyline.png" />
+    <Content Include="images\ground-transport.png" />
+    <Content Include="images\guvenlik.png" />
+    <Content Include="images\guy1.png" />
+    <Content Include="images\guy2.png" />
+    <Content Include="images\guy3.png" />
+    <Content Include="images\guy4.png" />
+    <Content Include="images\guy5.png" />
+    <Content Include="images\hakkimizda.jpg" />
+    <Content Include="images\hakkimizda1.png" />
+    <Content Include="images\hand1.png" />
+    <Content Include="images\heart-blog.png" />
+    <Content Include="images\hill1.png" />
+    <Content Include="images\hill2.png" />
+    <Content Include="images\hill3.png" />
+    <Content Include="images\hill4.png" />
+    <Content Include="images\hizli.png" />
+    <Content Include="images\homeslider_thumb1.jpg" />
+    <Content Include="images\homeslider_thumb2.jpg" />
+    <Content Include="images\homeslider_thumb3.jpg" />
+    <Content Include="images\homeslider_thumb4.jpg" />
+    <Content Include="images\homeslider_thumb5.jpg" />
+    <Content Include="images\homeslider_thumb6.jpg" />
+    <Content Include="images\home_two_counter1.png" />
+    <Content Include="images\home_two_counter2.png" />
+    <Content Include="images\home_two_counter3.png" />
+    <Content Include="images\home_two_counter4.png" />
+    <Content Include="images\huge.jpg" />
+    <Content Include="images\human-blog.png" />
+    <Content Include="images\icon_photo.png" />
+    <Content Include="images\imac1.png" />
+    <Content Include="images\ipad2.png" />
+    <Content Include="images\ipad_dark.png" />
+    <Content Include="images\iphone.png" />
+    <Content Include="images\island.png" />
+    <Content Include="images\kenburns1.jpg" />
+    <Content Include="images\kenburns2.jpg" />
+    <Content Include="images\kenburns3.jpg" />
+    <Content Include="images\kenburns4.jpg" />
+    <Content Include="images\kenburns5.jpg" />
+    <Content Include="images\koli1.png" />
+    <Content Include="images\koli2.png" />
+    <Content Include="images\laptopmockup_sliderdy.jpg" />
+    <Content Include="images\largegreen.png" />
+    <Content Include="images\liquid-good-travel-one.png" />
+    <Content Include="images\liquid-goods.png" />
+    <Content Include="images\logistic-service-hover.png" />
+    <Content Include="images\logistic-service.png" />
+    <Content Include="images\logistic-solution-one.png" />
+    <Content Include="images\logistic-solution-three.png" />
+    <Content Include="images\logistic-solution.jpg" />
+    <Content Include="images\logistic-standard.png" />
+    <Content Include="images\long-traveller-one.png" />
+    <Content Include="images\lupe_imac.png" />
+    <Content Include="images\lupe_macbook.png" />
+    <Content Include="images\macbook2.png" />
+    <Content Include="images\magaza.png" />
+    <Content Include="images\main-slider-10.jpg" />
+    <Content Include="images\main-slider-4.jpg" />
+    <Content Include="images\main-slider-5.jpg" />
+    <Content Include="images\main-slider-6.jpg" />
+    <Content Include="images\main-slider-7.jpg" />
+    <Content Include="images\main-slider-8.jpg" />
+    <Content Include="images\main-slider-9.jpg" />
+    <Content Include="images\main-slider-four.jpg" />
+    <Content Include="images\main-slider-one.jpg" />
+    <Content Include="images\main-slider-three.jpg" />
+    <Content Include="images\main-slider-two.jpg" />
+    <Content Include="images\map-location.png" />
+    <Content Include="images\message-icon.png" />
+    <Content Include="images\mobile-icon.png" />
+    <Content Include="images\moving-container-one.png" />
+    <Content Include="images\newslide2014_1.jpg" />
+    <Content Include="images\newwave1.png" />
+    <Content Include="images\newwave2.png" />
+    <Content Include="images\newwave32.png" />
+    <Content Include="images\newwave4.png" />
+    <Content Include="images\next.gif" />
+    <Content Include="images\ofis.png" />
+    <Content Include="images\oil-gas-logistic-one.png" />
+    <Content Include="images\oil-gas-logistic-three.jpg" />
+    <Content Include="images\oil-gas-logistic-two.png" />
+    <Content Include="images\oil-gas-logistic.jpg" />
+    <Content Include="images\on-parking-eight.jpg" />
+    <Content Include="images\on-parking-eight.png" />
+    <Content Include="images\on-parking-eleven.jpg" />
+    <Content Include="images\on-parking-eleven.png" />
+    <Content Include="images\on-parking-five.jpg" />
+    <Content Include="images\on-parking-five.png" />
+    <Content Include="images\on-parking-four.jpg" />
+    <Content Include="images\on-parking-four.png" />
+    <Content Include="images\on-parking-img\magnifier.png" />
+    <Content Include="images\on-parking-img\on-parking-eight.jpg" />
+    <Content Include="images\on-parking-img\on-parking-eight.png" />
+    <Content Include="images\on-parking-img\on-parking-eleven.jpg" />
+    <Content Include="images\on-parking-img\on-parking-eleven.png" />
+    <Content Include="images\on-parking-img\on-parking-five.jpg" />
+    <Content Include="images\on-parking-img\on-parking-five.png" />
+    <Content Include="images\on-parking-img\on-parking-four.jpg" />
+    <Content Include="images\on-parking-img\on-parking-four.png" />
+    <Content Include="images\on-parking-img\on-parking-nine.jpg" />
+    <Content Include="images\on-parking-img\on-parking-nine.png" />
+    <Content Include="images\on-parking-img\on-parking-one.jpg" />
+    <Content Include="images\on-parking-img\on-parking-one.png" />
+    <Content Include="images\on-parking-img\on-parking-seven.jpg" />
+    <Content Include="images\on-parking-img\on-parking-seven.png" />
+    <Content Include="images\on-parking-img\on-parking-six.jpg" />
+    <Content Include="images\on-parking-img\on-parking-six.png" />
+    <Content Include="images\on-parking-img\on-parking-ten.jpg" />
+    <Content Include="images\on-parking-img\on-parking-ten.png" />
+    <Content Include="images\on-parking-img\on-parking-three.jpg" />
+    <Content Include="images\on-parking-img\on-parking-three.png" />
+    <Content Include="images\on-parking-img\on-parking-twelve.jpg" />
+    <Content Include="images\on-parking-img\on-parking-twelve.png" />
+    <Content Include="images\on-parking-img\on-parking-two.jpg" />
+    <Content Include="images\on-parking-img\on-parking-two.png" />
+    <Content Include="images\on-parking-nine.jpg" />
+    <Content Include="images\on-parking-nine.png" />
+    <Content Include="images\on-parking-one.jpg" />
+    <Content Include="images\on-parking-one.png" />
+    <Content Include="images\on-parking-seven.jpg" />
+    <Content Include="images\on-parking-seven.png" />
+    <Content Include="images\on-parking-six.jpg" />
+    <Content Include="images\on-parking-six.png" />
+    <Content Include="images\on-parking-ten.jpg" />
+    <Content Include="images\on-parking-ten.png" />
+    <Content Include="images\on-parking-three.jpg" />
+    <Content Include="images\on-parking-three.png" />
+    <Content Include="images\on-parking-twelve.jpg" />
+    <Content Include="images\on-parking-twelve.png" />
+    <Content Include="images\on-parking-two.jpg" />
+    <Content Include="images\on-parking-two.png" />
+    <Content Include="images\our_mision_bg.jpg" />
+    <Content Include="images\our_vision_bg.jpg" />
+    <Content Include="images\ozenli.png" />
+    <Content Include="images\palm1.png" />
+    <Content Include="images\palm2.png" />
+    <Content Include="images\parallax_thumb1.jpg" />
+    <Content Include="images\parallax_thumb2.jpg" />
+    <Content Include="images\parallax_thumb3.jpg" />
+    <Content Include="images\parallax_thumb4.jpg" />
+    <Content Include="images\person.png" />
+    <Content Include="images\piyano.png" />
+    <Content Include="images\plate1.png" />
+    <Content Include="images\plate2.png" />
+    <Content Include="images\prebg.png" />
+    <Content Include="images\preload-circle.png" />
+    <Content Include="images\preload-dots.png" />
+    <Content Include="images\preload-ios.png" />
+    <Content Include="images\preload-quads.png" />
+    <Content Include="images\prev.gif" />
+    <Content Include="images\project-done.png" />
+    <Content Include="images\pulse1.png" />
+    <Content Include="images\quick-contact-one.png" />
+    <Content Include="images\quick-contact-two.png" />
+    <Content Include="images\recent-post-wid-one.jpg" />
+    <Content Include="images\recent-post-wid-three.jpg" />
+    <Content Include="images\recent-post-wid-two.jpg" />
+    <Content Include="images\redbg.jpg" />
+    <Content Include="images\redbg.png" />
+    <Content Include="images\redbg_big.png" />
+    <Content Include="images\rev-slider-one.jpg" />
+    <Content Include="images\seabg1.jpg" />
+    <Content Include="images\sehirlerarasi.png" />
+    <Content Include="images\sigorta.png" />
+    <Content Include="images\sigortali.png" />
+    <Content Include="images\single-blog-one.jpg" />
+    <Content Include="images\single-why-choose-1.jpg" />
+    <Content Include="images\single-why-choose-2.jpg" />
+    <Content Include="images\single-why-choose-3.jpg" />
+    <Content Include="images\site-logo-one.png" />
+    <Content Include="images\slide1.png" />
+    <Content Include="images\slidebg1.jpg" />
+    <Content Include="images\slidebg1.png" />
+    <Content Include="images\slidebg2.jpg" />
+    <Content Include="images\slider1.png" />
+    <Content Include="images\slider2.png" />
+    <Content Include="images\slider3.png" />
+    <Content Include="images\star.png" />
+    <Content Include="images\storage-facilities.jpg" />
+    <Content Include="images\sun.png" />
+    <Content Include="images\supply-chain-one.png" />
+    <Content Include="images\supply-chain-three.png" />
+    <Content Include="images\supply-chain-two.png" />
+    <Content Include="images\supply-chain.jpg" />
+    <Content Include="images\tag-icon.png" />
+    <Content Include="images\target.png" />
+    <Content Include="images\tekstil.png" />
+    <Content Include="images\transparent.png" />
+    <Content Include="images\transport-features-icon1.png" />
+    <Content Include="images\transport-features-icon2.png" />
+    <Content Include="images\transport-features-icon3.png" />
+    <Content Include="images\transport-features-icon4.png" />
+    <Content Include="images\transport-features-icon5.png" />
+    <Content Include="images\transport-features-icon6.png" />
+    <Content Include="images\transport-features-lock.png" />
+    <Content Include="images\transport-features-open.png" />
+    <Content Include="images\transport-features-two.jpg" />
+    <Content Include="images\transport-features.jpg" />
+    <Content Include="images\transport-network.jpg" />
+    <Content Include="images\trans_tile2.png" />
+    <Content Include="images\tree.png" />
+    <Content Include="images\videobg1.jpg" />
+    <Content Include="images\videoshadow.png" />
+    <Content Include="images\video_forest.jpg" />
+    <Content Include="images\villa.png" />
+    <Content Include="images\vision-title.png" />
+    <Content Include="images\warehousing-hover.png" />
+    <Content Include="images\warehousing.png" />
+    <Content Include="images\watch-video.jpg" />
+    <Content Include="images\we-are-best-1.jpg" />
+    <Content Include="images\we-are-here.png" />
+    <Content Include="images\we-are-open.png" />
+    <Content Include="images\weare-best-four.png" />
+    <Content Include="images\weare-best-one.png" />
+    <Content Include="images\weare-best-three.png" />
+    <Content Include="images\weare-best-two.png" />
+    <Content Include="images\weare_best_img.jpg" />
+    <Content Include="images\weare_best_img.png" />
+    <Content Include="images\why-choose-hover-1.png" />
+    <Content Include="images\why-choose-hover-2.png" />
+    <Content Include="images\why-choose-hover-3.png" />
+    <Content Include="images\widget-search-bg.png" />
+    <Content Include="images\woman.png" />
+    <Content Include="images\woman1.png" />
+    <Content Include="images\worldwide-delivery-one.png" />
+    <Content Include="images\worldwide-delivery-two.png" />
+    <Content Include="images\worldwide-delivery.jpg" />
+    <Content Include="images\years-of-experience.png" />
+    <Content Include="images\yellowbg_big-one.png" />
+    <Content Include="images\yellowbg_big.png" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\html5shiv.min.js" />
+    <Content Include="js\ie-opacity-polyfill.js" />
+    <Content Include="js\jflickrfeed.min.js" />
+    <Content Include="js\jquery.counterup.min.js" />
+    <Content Include="js\jquery.easing.1.3.min.js" />
+    <Content Include="js\jquery.lwtCountdown-1.0.js" />
+    <Content Include="js\jquery.mixitup.min.js" />
+    <Content Include="js\jquery.nav.js" />
+    <Content Include="js\jquery.parallax-1.1.3.js" />
+    <Content Include="js\jquery.scrollUp.min.js" />
+    <Content Include="js\jquery.sticky.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\owl.carousel.min.js" />
+    <Content Include="js\respond.min.js" />
+    <Content Include="js\rs-plugin\assets\arrowleft.png" />
+    <Content Include="js\rs-plugin\assets\arrowright.png" />
+    <Content Include="js\rs-plugin\assets\arrow_large_left.png" />
+    <Content Include="js\rs-plugin\assets\arrow_large_right.png" />
+    <Content Include="js\rs-plugin\assets\arrow_left.png" />
+    <Content Include="js\rs-plugin\assets\arrow_left2.png" />
+    <Content Include="js\rs-plugin\assets\arrow_left3.png" />
+    <Content Include="js\rs-plugin\assets\arrow_left3_hr.png" />
+    <Content Include="js\rs-plugin\assets\arrow_right.png" />
+    <Content Include="js\rs-plugin\assets\arrow_right2.png" />
+    <Content Include="js\rs-plugin\assets\arrow_right3.png" />
+    <Content Include="js\rs-plugin\assets\arrow_right3_hr.png" />
+    <Content Include="js\rs-plugin\assets\black50.png" />
+    <Content Include="js\rs-plugin\assets\boxed_bgtile.png" />
+    <Content Include="js\rs-plugin\assets\bullet.png" />
+    <Content Include="js\rs-plugin\assets\bullets.png" />
+    <Content Include="js\rs-plugin\assets\bullets2.png" />
+    <Content Include="js\rs-plugin\assets\bullet_boxed.png" />
+    <Content Include="js\rs-plugin\assets\coloredbg.png" />
+    <Content Include="js\rs-plugin\assets\grain.png" />
+    <Content Include="js\rs-plugin\assets\large_left.png" />
+    <Content Include="js\rs-plugin\assets\large_right.png" />
+    <Content Include="js\rs-plugin\assets\loader.gif" />
+    <Content Include="js\rs-plugin\assets\loader2.gif" />
+    <Content Include="js\rs-plugin\assets\navigdots.png" />
+    <Content Include="js\rs-plugin\assets\navigdots_bgtile.png" />
+    <Content Include="js\rs-plugin\assets\shadow1.png" />
+    <Content Include="js\rs-plugin\assets\shadow2.png" />
+    <Content Include="js\rs-plugin\assets\shadow3.png" />
+    <Content Include="js\rs-plugin\assets\small_left.png" />
+    <Content Include="js\rs-plugin\assets\small_left_boxed.png" />
+    <Content Include="js\rs-plugin\assets\small_right.png" />
+    <Content Include="js\rs-plugin\assets\small_right_boxed.png" />
+    <Content Include="js\rs-plugin\assets\timer.png" />
+    <Content Include="js\rs-plugin\assets\timerdot.png" />
+    <Content Include="js\rs-plugin\assets\transparent.jpg" />
+    <Content Include="js\rs-plugin\assets\white50.png" />
+    <Content Include="js\rs-plugin\css\extralayers.css" />
+    <Content Include="js\rs-plugin\css\settings-ie8.css" />
+    <Content Include="js\rs-plugin\css\settings.css" />
+    <Content Include="js\rs-plugin\font\revicons.svg" />
+    <Content Include="js\rs-plugin\images\decor_inside.png" />
+    <Content Include="js\rs-plugin\images\decor_inside_white.png" />
+    <Content Include="js\rs-plugin\images\decor_testimonial.png" />
+    <Content Include="js\rs-plugin\images\gradient\g30.png" />
+    <Content Include="js\rs-plugin\images\gradient\g40.png" />
+    <Content Include="js\rs-plugin\js\jquery.themepunch.plugins.min.js" />
+    <Content Include="js\rs-plugin\js\jquery.themepunch.revolution.js" />
+    <Content Include="js\rs-plugin\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="js\rs-plugin\videojs\font\vjs.svg" />
+    <Content Include="js\rs-plugin\videojs\video-js.css" />
+    <Content Include="js\rs-plugin\videojs\video-js.min.css" />
+    <Content Include="js\rs-plugin\videojs\video-js.png" />
+    <Content Include="js\rs-plugin\videojs\video-js.swf" />
+    <Content Include="js\rs-plugin\videojs\video.dev.js" />
+    <Content Include="js\rs-plugin\videojs\video.js" />
+    <Content Include="js\uikit.js" />
+    <Content Include="js\vendor\jquery-1.11.3.min.js" />
+    <Content Include="js\venobox.min.js" />
+    <Content Include="js\waypoints.min.js" />
+    <Content Include="js\wow.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\Lato-Semibold.eot" />
+    <Content Include="fonts\Lato-Semibold.ttf" />
+    <Content Include="fonts\Lato-Semibold.woff" />
+    <Content Include="fonts\Oxygen.eot" />
+    <Content Include="fonts\Oxygen.ttf" />
+    <Content Include="fonts\Oxygen.woff" />
+    <Content Include="fonts\Oxygen.woff2" />
+    <Content Include="fonts\OxygenBold.eot" />
+    <Content Include="fonts\OxygenBold.ttf" />
+    <Content Include="fonts\OxygenBold.woff" />
+    <Content Include="fonts\OxygenBold.woff2" />
+    <Content Include="fonts\Pe-icon-7-stroke.eot" />
+    <Content Include="fonts\Pe-icon-7-stroke.ttf" />
+    <Content Include="fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="fonts\RobotoBold.eot" />
+    <Content Include="fonts\RobotoBold.ttf" />
+    <Content Include="fonts\RobotoBold.woff" />
+    <Content Include="fonts\RobotoBold.woff2" />
+    <Content Include="fonts\RobotoLight.eot" />
+    <Content Include="fonts\RobotoLight.ttf" />
+    <Content Include="fonts\RobotoLight.woff" />
+    <Content Include="fonts\RobotoLight.woff2" />
+    <Content Include="fonts\RobotoLightItalic.eot" />
+    <Content Include="fonts\RobotoLightItalic.ttf" />
+    <Content Include="fonts\RobotoLightItalic.woff" />
+    <Content Include="fonts\RobotoLightItalic.woff2" />
+    <Content Include="fonts\RobotoMedium.eot" />
+    <Content Include="fonts\RobotoMedium.ttf" />
+    <Content Include="fonts\RobotoMedium.woff" />
+    <Content Include="fonts\RobotoMedium.woff2" />
+    <Content Include="fonts\RobotoRegular.eot" />
+    <Content Include="fonts\RobotoRegular.ttf" />
+    <Content Include="fonts\RobotoRegular.woff" />
+    <Content Include="fonts\RobotoRegular.woff2" />
+    <Content Include="images\.DS_Store" />
+    <Content Include="js\rs-plugin\assets\arrows.psd" />
+    <Content Include="js\rs-plugin\assets\bullets.psd" />
+    <Content Include="js\rs-plugin\assets\small_arrows.psd" />
+    <Content Include="js\rs-plugin\font\revicons.eot" />
+    <Content Include="js\rs-plugin\font\revicons.ttf" />
+    <Content Include="js\rs-plugin\font\revicons.woff" />
+    <Content Include="js\rs-plugin\js\.DS_Store" />
+    <Content Include="js\rs-plugin\js\index.php" />
+    <Content Include="js\rs-plugin\videojs\demo.captions.vtt" />
+    <Content Include="js\rs-plugin\videojs\font\vjs.eot" />
+    <Content Include="js\rs-plugin\videojs\font\vjs.ttf" />
+    <Content Include="js\rs-plugin\videojs\font\vjs.woff" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Header.cshtml" />
+    <Content Include="Views\Shared\Footer.cshtml" />
+    <Content Include="Views\Shared\JavaScript.cshtml" />
+    <Content Include="Views\Shared\StyleSheet.cshtml" />
+    <Content Include="Views\Home\Hizmetlerimiz.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62731</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:62731/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

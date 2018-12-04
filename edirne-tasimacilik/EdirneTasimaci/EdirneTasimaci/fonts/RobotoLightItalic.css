@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'RobotoLightItalic';
+    src: url('RobotoLightItalic.eot');
+    src: url('RobotoLightItalic.eot') format('embedded-opentype'),
+         url('RobotoLightItalic.woff2') format('woff2'),
+         url('RobotoLightItalic.woff') format('woff'),
+         url('RobotoLightItalic.ttf') format('truetype'),
+         url('RobotoLightItalic.svg#RobotoLightItalic') format('svg');
+}
