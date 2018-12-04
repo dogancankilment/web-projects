@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/dck.iml" filepath="$PROJECT_DIR$/.idea/dck.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../.idea/dck-app.iml" filepath="$PROJECT_DIR$/../.idea/dck-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../dogancankilment.com/.idea/dogancankilment.com.iml" filepath="$PROJECT_DIR$/../../../dogancankilment.com/.idea/dogancankilment.com.iml" />
+    </modules>
+  </component>
+</project>
