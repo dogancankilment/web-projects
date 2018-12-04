@@ -1,0 +1,85 @@
+{% extends "home/base-chart.html" %}
+
+{% load staticfiles %}
+
+{% block page_content %}
+<!-- ============================================================== -->
+        <!-- End Left Sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page Content -->
+        <!-- ============================================================== -->
+
+                <!-- row -->
+                <div class="row">
+                    <div class="col-lg-3 col-sm-3 col-xs-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title">Toplam Yazılım PROJESİ</h3>
+                            <ul class="list-inline two-part">
+                                <li>
+                                    <div id="sparklinedash"></div>
+                                </li>
+                                <li class="text-right"><i class="ti-arrow-up text-success"></i> <span class="counter text-success">10</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-xs-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title">Toplam GrafİK TASARIM İŞİ</h3>
+                            <ul class="list-inline two-part">
+                                <li>
+                                    <div id="sparklinedash2"></div>
+                                </li>
+                                <li class="text-right"><i class="ti-arrow-up text-purple"></i> <span class="counter text-purple">10</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-xs-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title">Çalışan Sayımız</h3>
+                            <ul class="list-inline two-part">
+                                <li>
+                                    <div id="sparklinedash3"></div>
+                                </li>
+                                <li class="text-right"><i class="ti-arrow-up text-info"></i> <span class="counter text-info">10</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-xs-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title">MÜŞTERİ Sayımız</h3>
+                            <ul class="list-inline two-part">
+                                <li>
+                                    <div id="sparklinedash4"></div>
+                                </li>
+                                <li class="text-right"><i class="ti-arrow-up text-danger"></i> <span class="text-danger">10</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+                <!-- row -->
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="white-box">
+                            <h3 class="box-title">Chart With image </h3>
+                            <p class="text-muted m-b-30">put image between div</p>
+                            <div class="row text-center">
+                                <div class="col-md-3">
+                                    <a href="#"><div data-label="10%" class="css-bar css-bar-10 css-bar-lg css-bar-default"><img src="{{ STATIC_URL }}static/plugins/images/users/genu.jpg" alt="User"></div></a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a href="#"><div data-label="20%" class="css-bar css-bar-20 css-bar-lg"><img src="{{ STATIC_URL }}static/plugins/images/users/sonu.jpg" alt="User"></div></a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a href="#"><div data-label="30%" class="css-bar css-bar-30 css-bar-lg css-bar-success"><img src="{{ STATIC_URL }}static/plugins/images/users/govinda.jpg" alt="User"></div></a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a href="#"><div data-label="40%" class="css-bar css-bar-40 css-bar-lg css-bar-warning"><img src="{{ STATIC_URL }}static/plugins/images/users/ritesh.jpg" alt="User"></div></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+{% endblock page_content %}

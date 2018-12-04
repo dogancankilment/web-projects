@@ -1,0 +1,129 @@
+{% extends "home/base.html" %}
+
+{% load staticfiles %}
+
+{% block page_content %}
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="white-box">
+                <h3 class="box-title">MÜŞTERİLER</h3>
+                <p class="text-muted">Sistemde Kayıtlı Tüm Müşteriler</p>
+                <div class="table-responsive">
+                    <table class="table color-table primary-table">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Başlık</th>
+                            <th>Açıklama</th>
+                            <th>Aktif</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for cm in tum_musteriler %}
+                            <tr>
+                                <td>{{ cm.id }}</td>
+                                <td>{{ cm.title }}</td>
+                                <td>{{ cm.content }}</td>
+                                <td>{{ cm.active }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="white-box">
+                <h3 class="box-title">GÖREVLER</h3>
+                <p class="text-muted">Sistemde Kayıtlı Tüm Görevler</p>
+                <div class="table-responsive">
+                    <table class="table color-table primary-table">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Başlık</th>
+                            <th>Durumu</th>
+                            <th>Hangi Proje</th>
+                            <th>Hangi Müşteri</th>
+                            <th>Görev Adamı</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for cg in tum_gorevler %}
+                            <tr>
+                                <td>{{ cg.id }}</td>
+                                <td>{{ cg.title }}</td>
+                                <td>{{ cg.status }}</td>
+                                <td>{{ cg.which_proje }}</td>
+                                <td>{{ cg.which_musteri }}</td>
+                                <td>{{ cg.which_user }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="white-box">
+                <h3 class="box-title">Projeler</h3>
+                <p class="text-muted">Sistemde Kayıtlı Tüm Projeler</p>
+                <div class="table-responsive">
+                    <table class="table color-table primary-table">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Başlık</th>
+                            <th>Proje Açıklaması</th>
+                            <th>Yaratılma Tarihi</th>
+                            <th>Teslim Tarihi</th>
+                            <th>Aktif</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for cp in tum_projeler %}
+                            <tr>
+                                <td>{{ cp.id }}</td>
+                                <td>{{ cp.title }}</td>
+                                <td>{{ cp.content }}</td>
+                                <td>{{ cp.created_at }}</td>
+                                <td>{{ cp.deadline }}</td>
+                                <td>{{ cp.active }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="white-box">
+                <h3 class="box-title">Kullanıcılar</h3>
+                <p class="text-muted">Sistemde Kayıtlı Tüm Kullanıcılar</p>
+                <div class="table-responsive">
+                    <table class="table color-table primary-table">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Kullanıcı Adı</th>
+                            <th>E-mail Adresi</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for kullanici in tum_kullanicilar %}
+                            <tr>
+                                <td>{{ kullanici.id }}</td>
+                                <td>{{ kullanici.username }}</td>
+                                <td>{{ kullanici.email }}</td>
+                                <td><a href="duzenle/{{ kullanici.username }}"><i class="fa fa-heart"></i></a></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock page_content %}
