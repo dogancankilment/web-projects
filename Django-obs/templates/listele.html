@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+    {% load filtrelerim %}
+    <title>Ogretim Elemanları Listesi</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="/static/css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="theme.css" rel="stylesheet">
+  </head>
+
+<body>
+
+<h1>Liste:</h1>
+<form method="GET">
+{{ arama_formu.aranacak_kelime.errors }}
+{{ arama_formu.aranacak_kelime.labels }}
+{{ arama_formu.aranacak_kelime }}
+
+<input type="submit" value="Bul">
+</form>
+
+{% if aranacak_kelime %}
+  <h3>Aradiginiz "{{aranacak_kelime}}" için bulunan sonuçlar:</h3>
+{% endif %}
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Sıra</th>
+      <th>Unvani</th>
+      {% if olcut == '1' %}<th class="siralanan">
+      {% else %} <th> {% endif %} <a href="?sirala=1">Adı</a></th>
+
+      {% if olcut == '2' %}<th class="siralanan">
+      {% else %} <th> {% endif %} <a href="?sirala=2">Soyadi</th>
+      <th>Telefonu</th>
+      {% if olcut == '3' %}<th class="siralanan">
+      {% else %} <th> {% endif %} <a href="?sirala=3">E-Posta</th>
+      <!--<th>Verdigi Dersler</th> -->
+    </tr>
+    </thead>
+    {% for o in ogretim_elemanlari %}
+    <tr>
+      <td><a href="/yonetim/ogretim_elemani_ekle?id={{o.id}}">
+      {{ ogretim_elemanlari.start_index|add:forloop.counter0 }}</a></td>
+      <td><a href="/yonetim/ogretim_elemani_ekle?id={{ o.unvani }}">{{ o.unvani }}</td>
+      <td><a href="/yonetim/ogretim_elemani_ekle?id={{ o.first_name }}">{{ o.first_name }}</td>
+      <td><a href="/yonetim/ogretim_elemani_ekle?id={{ o.last_name }}">{{ o.last_name }}</td>
+      <td>{{ o.telefonu }}</td>
+      <td>{{ o.email }}</td>
+      <!-- <td>{{ o.id|ders_bul|unordered_list }}</td> -->
+    </tr>
+    {% endfor %}
+    </table>
+    </div>
+<p>
+{% if ogretim_elemanlari.has_previous %}
+  <a href="?sayfa={{ ogretim_elemanlari.previous_page_number }}">Önceki</a>
+{% endif %}
+
+Sayfa {{ ogretim_elemanlari.number }} / {{ ogretim_elemanlari.paginator.num_pages }}
+
+{% if ogretim_elemanlari.has_next %}
+  <a href="?sayfa={{ ogretim_elemanlari.next_page_number }}">Sonraki</a>
+{% endif %}
+</p>
+<p>
+{% for s in ogretim_elemanlari.paginator.page_range %}
+  <a href="?sayfa={{s}}">{{s}}</a>
+{% endfor %}
+</p>
+<p><a href="/yonetim/ogretim_elemani_ekle">Yeni Kayıt Ekle</p>
+<p><a href="/yonetim/">Anasayfa</p>
+</body>
+</html>
