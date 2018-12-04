@@ -1,0 +1,259 @@
+<!doctype html>
+<!--[if lte IE 9]>
+<html lang="en" class="no-focus lt-ie10 lt-ie10-msg"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en" class="no-focus"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+
+    <title>New Post</title>
+
+    <meta name="description"
+          content="Fileria">
+    <meta name="author" content="dogancankilment.com">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Open Graph Meta -->
+    <meta property="og:title" content="Fileria">
+    <meta property="og:site_name" content="Fileria">
+    <meta property="og:description"
+          content="Fileria">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    <!-- Icons -->
+    <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+    <link rel="shortcut icon" href="{{STATIC_URL}}static/img/favicons/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{STATIC_URL}}static/img/favicons/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{STATIC_URL}}static/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="{{STATIC_URL}}static/js/plugins/jquery-tags-input/jquery.tagsinput.min.css">
+
+    <!-- Stylesheets -->
+    <!-- Page JS Plugins CSS -->
+    <link rel="stylesheet" href="{{STATIC_URL}}static/js/plugins/simplemde/css/simplemde.min.css">
+    <link rel="stylesheet" href="{{STATIC_URL}}static/js/plugins/jquery-auto-complete/jquery.auto-complete.min.css">
+
+    <!-- Codebase framework -->
+    <link rel="stylesheet" id="css-main" href="{{STATIC_URL}}static/css/codebase.min.css">
+
+    <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
+    <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/flat.min.css"> -->
+    <!-- END Stylesheets -->
+</head>
+<body>
+<div id="page-container" class="page-header-modern main-content-boxed">
+    <header id="page-header">
+        <div class="content-header">
+            <div class="content-header-section">
+                <div class="btn-group" role="group">
+
+                </div>
+                <div class="btn-group" role="group">
+                </div>
+            </div>
+            <div class="content-header-section">
+                <!-- User Dropdown -->
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-rounded btn-dual-secondary" id="page-header-user-dropdown"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {% if request.user.is_authenticated %}
+                        {{ request.user }}
+                        {% endif %}
+                        <i class="fa fa-angle-down ml-5"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right min-width-150"
+                         aria-labelledby="page-header-user-dropdown">
+                        <a class="dropdown-item" href="/admin-panel">
+                            <i class="si si-user mr-5"></i> Home
+                        </a>
+                        <a class="dropdown-item d-flex align-items-center justify-content-between" href="/create-post">
+                            <span><i class="si si-envelope-open mr-5"></i>Create Post</span>
+                            <span class="badge badge-primary"></span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/logout">
+                            <i class="si si-logout mr-5"></i> Sign Out
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- END Header -->
+
+    <!-- Main Container -->
+    <main id="main-container">
+        <div class="content">
+            <h2 class="content-heading">New Post</h2>
+            <form action="" method="post" enctype="multipart/form-data">
+                <!--Title-->
+                <div class="block">
+                    <div class="block-header block-header-default">
+                        <h3 class="block-title">Title</h3>
+                    </div>
+                    <div class="block-content">
+                        <div class="form-group row">
+                            <div class="col-12">
+                                <input type="text" class="form-control" id="title" name="title"
+                                       placeholder="Title">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Category-->
+                <div class="block">
+                    <div class="block-header block-header-default">
+                        <h3 class="block-title">Category</h3>
+                    </div>
+                    <div class="block-content">
+                        <div class="form-group row">
+                            <div class="col-12">
+                                <select class="form-control" id="example-select" name="example-select">
+                                    <option id="1" name="1" value="Life">Life</option>
+                                    <option id="2" name="2" value="Technology">Technology</option>
+                                    <option id="3" name="3" value="Cryptocurrency">Cryptocurrency</option>
+                                    <option id="4" name="4" value="Relationships">Relationships</option>
+                                    <option id="5" name="5" value="Food/Drink">Food/Drink</option>
+                                    <option id="6" name="6" value="Science">Science</option>
+                                    <option id="7" name="7" value="Sport">Sport</option>
+                                    <option id="8" name="8" value="Culture">Culture</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Content-->
+                <div class="block">
+                    <div class="block-header block-header-default">
+                        <h3 class="block-title">Content</h3>
+                    </div>
+
+                    <div class="block-content">
+                        <div class="form-group row">
+                            <div class="col-12">
+                                <div id="content_count" style="display:none"></div>
+                                <textarea id="content" name="content" rows="20" cols="100" class="word_count"></textarea>
+
+{#                                <textarea class="form-control" id="content" name="content" rows="20" placeholder="Post Content"></textarea>#}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Tags-->
+                <div class="block">
+                    <div class="block-header block-header-default">
+                        <h3 class="block-title">Tags</h3>
+                    </div>
+
+                    <div class="block-content">
+                        <div class="form-group row">
+                            <div class="col-12">
+                                <div class="col-lg-10">
+                                    <input type="text" class="js-tags-input form-control" data-height="34px"
+                                           id="tags" name="tags" value="tech,cryptocurrency">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--İmage-->
+                <div class="block">
+                    <div class="block-header block-header-default">
+                        <h3 class="block-title">Image</h3>
+                    </div>
+
+                    <div class="block-content">
+                        <div class="form-group row">
+                            <div class="col-12">
+                                <div class="col-lg-10">
+                                    <input type="file" name="image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                {% csrf_token %}
+                <button class="btn btn-lg btn-primary btn-block" type="submit" style="width: 100px">Save</button>
+
+            </form>
+        </div>
+
+<!-- END Page Content -->
+</main>
+<!-- END Main Container -->
+
+<!-- Footer -->
+<footer id="page-footer" class="opacity-0">
+    <div class="content py-20 font-size-xs clearfix">
+        <div class="float-right">
+            <i class="fa fa-heart text-pulse"></i> by <a class="font-w600" href="http://goo.gl/vNS3I" target="_blank">DCK</a>
+        </div>
+        <div class="float-left">
+            <a class="font-w600" href="https://goo.gl/po9Usv" target="_blank">DCK</a> &copy; <span class="js-year-copy">2018</span>
+        </div>
+    </div>
+</footer>
+<!-- END Footer -->
+</div>
+<!-- END Page Container -->
+
+<!-- Codebase Core JS -->
+<script src="{{STATIC_URL}}static/js/core/jquery.min.js"></script>
+<script src="{{STATIC_URL}}static/js/core/popper.min.js"></script>
+<script src="{{STATIC_URL}}static/js/core/bootstrap.min.js"></script>
+<script src="{{STATIC_URL}}static/js/core/jquery.slimscroll.min.js"></script>
+<script src="{{STATIC_URL}}static/js/core/jquery.scrollLock.min.js"></script>
+<script src="{{STATIC_URL}}static/js/core/jquery.appear.min.js"></script>
+<script src="{{STATIC_URL}}static/js/core/jquery.countTo.min.js"></script>
+<script src="{{STATIC_URL}}static/js/core/js.cookie.min.js"></script>
+<script src="{{STATIC_URL}}static/js/codebase.js"></script>
+<script src="{{STATIC_URL}}static/js/plugins/jquery-tags-input/jquery.tagsinput.min.js"></script>
+
+<!-- Page JS Plugins -->
+<script src="{{STATIC_URL}}static/js/plugins/ckeditor/ckeditor.js"></script>
+<script src="{{STATIC_URL}}static/js/plugins/simplemde/js/simplemde.min.js"></script>
+<script src="{{STATIC_URL}}static/js/pages/be_forms_plugins.js"></script>
+
+<script>
+    jQuery(function () {
+        // Init page helpers (CKEditor + SimpleMDE plugins)
+        Codebase.helpers(['ckeditor', 'simplemde', 'tags-inputs']);
+    });
+</script>
+
+<script>
+    $(document).ready(function() {
+
+        $('.word_count').each(function() {
+            var input = '#' + this.id;
+            var count = input + '_count';
+            $(count).show();
+            word_count(input, count);
+            $(this).keyup(function() { word_count(input, count) });
+        });
+
+    });
+
+    function word_count(field, count) {
+
+        var number = 0;
+        var matches = $(field).val().match(/\b/g);
+        if(matches) {
+            number = matches.length/2;
+        }
+        $(count).text( number + ' word' + (number != 1 ? 's' : '') + ' count');
+
+    }
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+	<title>Fileria</title>
+    <link rel="icon" type="image/x-icon" href="{{ STATIC_URL }}/home/images//favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}/home/images//apple-touch-icon-114x114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}/home/images//apple-touch-icon-72x72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}/home/images//apple-touch-icon-57x57-precomposed.png">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7cRoboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i%7cPoppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7cMontserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7cLato:100,100i,300,300i,400,400i,700,700i,900,900i%7cOpen+Sans:300,300i,400,400i,600,600i,700,700i,800,800i%7cPT+Sans:400,400i,700,700i" rel="stylesheet">
+	<link href="{{ STATIC_URL }}/home/css/lib.css" rel="stylesheet">
+	<link rel="stylesheet" href="{{ STATIC_URL }}/home/css/rtl.css">
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/home/style.css">
+
+	<!--[if lt IE 9]>
+		<script src="{{ STATIC_URL }}/home/js/html5/respond.min.js"></script>
+    <![endif]-->
+	
+</head>
+
+<body data-offset="200" data-spy="scroll" data-target=".ownavigation">
+	<!-- Loader -->
+	<div id="site-loader" class="load-complete">
+		<div class="loader">
+			<div class="line-scale"><div></div><div></div><div></div><div></div><div></div></div>
+		</div>
+	</div>
+    <!-- Loader /- -->
+
+	<!-- Header Section -->
+	<header class="header_s header-fix header_s1">
+		<!-- SidePanel -->
+		<div id="slidepanel-1" class="slidepanel">
+			<!-- Top Header -->
+{#			<div class="top-header">#}
+{#				<!-- Container -->#}
+{#				<div class="container">	#}
+{#					<div class="cnt-detail">#}
+{#						<span><i class="fa fa-phone"></i><a href="tel:001234567899">0012 3456 7899</a></span>#}
+{#						<ul>#}
+{#							<li><a href="#"><i class="fa fa-facebook"></i></a></li>#}
+{#							<li><a href="#"><i class="fa fa-twitter"></i></a></li>#}
+{#							<li><a href="#"><i class="fa fa-linkedin"></i></a></li>#}
+{#							<li><a href="#"><i class="fa fa-tumblr"></i></a></li>#}
+{#							<li><a href="#"><i class="fa fa-vimeo"></i></a></li>#}
+{#							<li><a href="#"><i class="fa fa-pinterest"></i></a></li>#}
+{#						</ul>#}
+{#					</div>#}
+{#				</div><!-- Container /- -->#}
+{#			</div><!-- Top Header /- -->#}
+		</div><!-- SidePanel /- -->
+		<!-- Menu Block -->
+		<div class="menu-block">
+			<nav class="navbar ownavigation navbar-expand-lg">
+				<!-- Container -->
+				<div class="container">
+					<!--a class="navbar-brand" href="index.html">Cryptonix</a-->
+					<a class="image-logo navbar-brand" href="/"><img src="{{ STATIC_URL }}/home/images/logo-blue.png" alt="Logo" /></a>
+					<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="true" aria-label="Toggle navigation">
+						<i class="fa fa-bars"></i>
+					</button>
+					<div class="collapse navbar-collapse" id="navbar">
+						<ul class="navbar-nav">
+							<li class="dropdown">
+								<i class="ddl-switch fa fa-angle-down"></i>
+								<a class="nav-link dropdown-toggle" title="Home" href="/">Home</a>
+							</li>
+							<li class="dropdown">
+                                <a class="nav-link dropdown-toggle" title="Home" href="/admin-panel">Admin Panel</a>
+							</li>
+                            <li class="dropdown">
+                                <a class="nav-link dropdown-toggle" title="Home" href="/login">Login</a>
+							</li>
+						</ul>
+					</div>
+				</div><!-- Container /- -->
+			</nav>
+		</div><!-- Menu Block /- -->
+	</header><!-- Header Section /- -->	
+
+	<div class="main-container">
+	
+		<!-- Page Banner -->
+		<div class="page-banner blog-list-banner">
+			<!-- Container -->
+			<div class="container">
+				<h3>Blog</h3>
+			</div><!-- Container /- -->
+		</div><!-- Page Banner /- -->
+		<main class="site-main">
+			<!-- Blog list -->
+			<div class="blog-list">
+				<!-- Container -->
+				<div class="container">
+					<!-- Row -->
+					<div class="row">
+						<!-- Content Area -->
+						<div class="col-md-8 content-area">
+							<!-- Blog Box -->
+                            {% if blogs %}
+                                {% for b in blogs %}
+                                    <div class="blog-box">
+                                        <div class="entry-cover">
+                                            <a href="#"><img src="media/{{ b.image }}" alt="Blog" /></a>
+                                        </div>
+                                        <div class="entry-content">
+                                            <div class="entry-header">
+                                                <h3 class="entry-title"><a href="#">{{ b.title }}</a></h3>
+                                                <div class="entry-meta">
+                                                    <span><i class="fa fa-user"></i> by <a href="#">{{ b.which_user }}</a></span>
+                                                    <span><i class="fa fa-clock-o" aria-hidden="true"></i>{{ b.created_at }}</span>
+                                                </div>
+                                            </div>
+                                            <p>{{ b.content|truncatechars:300 }}</p>
+                                            <a href="{% url post b.id %}">Read more</a>
+                                        </div>
+                                    </div><!-- Blog Box /- -->
+                                {% endfor %}
+                            {% endif %}
+							<!-- Pagination -->
+							<nav class="navigation pagination">
+								<h2 class="screen-reader-text">Posts navigation</h2>
+								<div class="nav-links">
+									<span class="page-numbers current">
+										<span class="meta-nav screen-reader-text">Page </span>1
+									</span>
+									<a class="page-numbers" href="#"><span class="meta-nav screen-reader-text">Page </span>2</a>
+									<a class="page-numbers" href="#"><span class="meta-nav screen-reader-text">Page </span>3</a>
+								</div>
+							</nav><!-- Pagination /- -->
+						</div><!-- Content Area -->
+						<!-- Widget Area -->
+						<div class="col-md-4 widget-area">						
+							<!-- Widget: Categories -->
+                            {% if blogs %}
+                                {% for b in blogs %}
+                                    <aside id="categories" class="widget widget_categories">
+                                        <h3 class="widget-title">Categories</h3>
+                                        <ul>
+                                            <li class="cat-item"><a href="/">{{ b.category }}</a></li>
+                                        </ul>
+                                    </aside><!-- Widget: Categories /- -->
+							    {% endfor %}
+                            {% endif %}
+
+                            {% if blogs %}
+                                {% for b in blogs %}
+                                    <aside class="widget widget_latest_post">
+                                        <h3 class="widget-title">Recent Post</h3>
+                                        <div class="latest-content">
+                                            <div class="latest-post">
+                                                <a href="#"><img style="width: 70px; height: 70px;" src="media/{{ b.image }}" alt="Post" /></a>
+                                                <h4><a href="#">{{ b.title }}</a></h4>
+                                                <span><a href="#">{{ b.created_at }}</a></span>
+                                            </div>
+                                        </div>
+                                    </aside>
+                                {% endfor %}
+                            {% endif %}
+						</div><!-- Widget Area /- -->
+					</div><!-- Row /- -->
+				</div><!-- Container /- -->
+			</div><!-- Blog list /- -->
+
+		</main>
+		
+	</div>
+	
+	<!-- Footer Section -->
+	<div class="footer-section">
+		<!-- Footer Widget -->
+		<div class="footer-widget">
+			<!-- Container -->
+			<div class="container">			
+				<!-- Row -->
+				<div class="row">
+					<div class="col-lg-2 col-md-6">
+						<!-- Widget : About -->
+						<aside class="widget widget_about">
+							<h3 class="widget-title">About Project</h3>
+							<p>Make your content free.</p>
+						</aside><!-- Widget : About /- -->						
+					</div>
+					<div class="col-lg-3 col-md-6">
+
+					</div>
+					<div class="col-lg-3 col-md-6">
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<!-- Widget : Contact Info -->
+						<aside class="widget widget_contact-info">
+							<h3 class="widget-title">Contact info</h3>
+							<div class="wid-cnt-detail">
+								<p><i class="fa fa-map-marker"></i>Turkey</p>
+								<ul>
+									<li><a href="#"><i class="fa fa-github"></i></a></li>
+								</ul>
+							</div>
+						</aside><!-- Widget : Contact -->
+					</div>
+				</div><!-- Row /- -->
+			</div><!-- Container /- -->
+		</div><!-- Footer Widget /- -->
+		<div class="bottom-footer">
+			<!-- Container -->
+			<div class="container">
+				<div class="ftr-content">
+					<p><i class="fa fa-copyright"></i> Fileria. All Rights Reserved</p>
+					<a href="#" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+				</div>
+			</div><!-- Container /- -->
+		</div>
+	</div><!-- Footer Section /- -->
+	
+	<!-- JQuery v1.12.4 -->
+	<script src="{{ STATIC_URL }}/home/js/jquery-1.12.4.min.js"></script>
+
+	<!-- Library - Js -->
+	<script src="{{ STATIC_URL }}/home/js/popper.min.js"></script>
+	<script src="{{ STATIC_URL }}/home/js/lib.js"></script>
+	
+	<!-- Library - Theme JS -->
+	<script src="{{ STATIC_URL }}/home/js/functions.js"></script>
+	
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!doctype html>
+<!--[if lte IE 9]>     <html lang="en" class="no-focus lt-ie10 lt-ie10-msg"> <![endif]-->
+<!--[if gt IE 9]><!--> <html lang="en" class="no-focus"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+
+        <title>{{ post.title }}</title>
+
+        <meta name="description" content="{{ post.content }}">
+        <meta name="author" content="dogancankilment.com">
+        <meta name="robots" content="noindex, nofollow">
+
+        <meta property="og:title" content="{{ post.title }}">
+        <meta property="og:site_name" content="Fileria">
+        <meta property="og:description" content="{{ post.content }}">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="">
+        <meta property="og:image" content="">
+
+        <link rel="shortcut icon" href="{{STATIC_URL}}/img/favicons/favicon.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="{{STATIC_URL}}/img/favicons/favicon-192x192.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{STATIC_URL}}/img/favicons/apple-touch-icon-180x180.png">
+        <link rel="stylesheet" href="{{STATIC_URL}}/js/plugins/magnific-popup/magnific-popup.min.css">
+        <link rel="stylesheet" id="css-main" href="{{STATIC_URL}}/css/codebase.min.css">
+
+    </head>
+    <body>
+
+        <div id="page-container" class="page-header-glass page-header-inverse main-content-boxed">
+            <header id="page-header" >
+                <div class="content-header" >
+                    <div class="content-header-section">
+                        <div class="btn-group" role="group">
+
+                        </div>
+                        <div class="btn-group" role="group">
+                        </div>
+                    </div>
+                <div class="content-header-section">
+                    <!-- User Dropdown -->
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-rounded btn-dual-secondary" id="page-header-user-dropdown"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {% if request.user.is_authenticated %}
+                            {{ request.user }}
+                            {% endif %}
+                            <i class="fa fa-angle-down ml-5"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right min-width-150"
+                             aria-labelledby="page-header-user-dropdown">
+                            <a class="dropdown-item" href="admin-panel">
+                                <i class="si si-user mr-5"></i> Home
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center justify-content-between" href="/create-post">
+                                <span><i class="si si-envelope-open mr-5"></i>Create Post</span>
+                                <span class="badge badge-primary"></span>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/logout">
+                                <i class="si si-logout mr-5"></i> Sign Out
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <div id="page-header-search" class="overlay-header">
+
+                </div>
+                <div id="page-header-loader" class="overlay-header bg-primary">
+                    <div class="content-header content-header-fullrow text-center">
+                        <div class="content-header-item">
+                            <i class="fa fa-sun-o fa-spin text-white"></i>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Container -->
+            <main id="main-container" >
+                <div class="bg-image" style="background-image: url('assets/img/photos/photo27@2x.jpg');">
+                    <div class="bg-black-op-75">
+                        <div class="content content-top text-center">
+                            <div class="py-100">
+                                <h1 class="font-w700 text-white mb-10">{{ post.title }}</h1>
+                                <h2 class="h4 font-w400 text-white-op"></h2>
+                                <div class="font-size-md text-muted">
+                                    <i class="fa fa-fw fa-user mr-5"></i>{{ post.which_user }}
+                                    <i class="fa fa-fw fa-calendar mr-5"></i>{{ post.created_at }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story -->
+                <div class="content content-full nice-copy-story">
+                    <div class="row justify-content-center py-30">
+                        <div class="col-lg-8">
+                            <p>
+                                <image class="img-fluid" src="/media/{{ post.image }}"></image>
+                            </p>
+                            <h3>{{ post.title }}</h3>
+                            <div class="simplemdepreview">{{ post.content }}</div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center py-30">
+                        <div class="col-lg-8 clearfix">
+                            <button type="button" class="btn btn-rounded btn-secondary float-right">
+                                <i class="fa fa-share-alt text-primary mr-5 "></i> Share
+                            </button>
+                            <button type="button" class="btn btn-rounded btn-secondary mr-5">
+                                <i class="fa fa-heart text-danger mr-5 "></i> Reccomend
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+
+            <footer id="page-footer" class="opacity-0">
+                <div class="content py-20 font-size-xs clearfix">
+                    <div class="float-right">
+                        <i class="fa fa-heart text-pulse"></i> by <a class="font-w600" href="http://goo.gl/vNS3I" target="_blank">DCK</a>
+                    </div>
+                    <div class="float-left">
+                        <a class="font-w600" href="https://goo.gl/po9Usv" target="_blank">DCK</a> &copy; <span class="js-year-copy">2018</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <script src="{{STATIC_URL}}/js/core/jquery.min.js"></script>
+        <script src="{{STATIC_URL}}/js/core/popper.min.js"></script>
+        <script src="{{STATIC_URL}}/js/core/bootstrap.min.js"></script>
+        <script src="{{STATIC_URL}}/js/core/jquery.slimscroll.min.js"></script>
+        <script src="{{STATIC_URL}}/js/core/jquery.scrollLock.min.js"></script>
+        <script src="{{STATIC_URL}}/js/core/jquery.appear.min.js"></script>
+        <script src="{{STATIC_URL}}/js/core/jquery.countTo.min.js"></script>
+        <script src="{{STATIC_URL}}/js/core/js.cookie.min.js"></script>
+        <script src="{{STATIC_URL}}/js/codebase.js"></script>
+
+        <script src="{{STATIC_URL}}/js/plugins/magnific-popup/magnific-popup.min.js"></script>
+        <script src="{{STATIC_URL}}/js/plugins/simplemde/js/simplemde.min.js"></script>
+
+        <script type='text/javascript'>
+            simplemde.codemirror.on("change", function () {
+                // Fill div contents
+                document.getElementByID("simplemdepreview").innerHTML = simpleMDE.parsedValue();
+            });
+        </script>
+
+        <script>
+            jQuery(function () {
+                // Init page helpers (Magnific Popup plugin)
+                Codebase.helpers('magnific-popup');
+            });
+        </script>
+    </body>
+</html>

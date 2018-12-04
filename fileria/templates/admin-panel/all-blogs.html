@@ -1,0 +1,233 @@
+<!doctype html>
+<!--[if lte IE 9]>     <html lang="en" class="no-focus lt-ie10 lt-ie10-msg"> <![endif]-->
+<!--[if gt IE 9]><!--> <html lang="en" class="no-focus"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+
+        <title>Fileria Admin Panel</title>
+
+        <meta name="description" content="Fileria">
+        <meta name="author" content="dogancankilment.com">
+        <meta name="robots" content="noindex, nofollow">
+
+        <!-- Open Graph Meta -->
+        <meta property="og:title" content="Fileria">
+        <meta property="og:site_name" content="Fileria">
+        <meta property="og:description" content="Fileria">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="">
+        <meta property="og:image" content="">
+        <link rel="shortcut icon" href="{{STATIC_URL}}static/img/favicons/favicon.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="{{STATIC_URL}}static/img/favicons/favicon-192x192.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{STATIC_URL}}static/img/favicons/apple-touch-icon-180x180.png">
+        <link rel="stylesheet" href="{{STATIC_URL}}static/js/plugins/slick/slick.min.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}static/js/plugins/slick/slick-theme.min.css">
+        <link rel="stylesheet" id="css-main" href="{{STATIC_URL}}static/css/codebase.min.css">
+
+    </head>
+    <body>
+        <div id="page-container" class="page-header-glass page-header-inverse main-content-boxed">
+            <header id="page-header">
+                <div class="content-header">
+                    <div class="content-header-section">
+                        <div class="btn-group" role="group">
+                        </div>
+                        <div class="btn-group" role="group">
+                            <div class="dropdown-menu min-width-150" aria-labelledby="page-header-themes-dropdown">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-header-section">
+                        <!-- User Dropdown -->
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-rounded btn-dual-secondary" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {% if request.user.is_authenticated %}
+                                    {{ request.user }}
+                                {% endif %}
+                                <i class="fa fa-angle-down ml-5"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right min-width-150" aria-labelledby="page-header-user-dropdown">
+                                <a class="dropdown-item" href="/admin-panel">
+                                    <i class="si si-user mr-5"></i> Home
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center justify-content-between" href="/create-post">
+                                    <span><i class="si si-envelope-open mr-5"></i>Create Post</span>
+                                    <span class="badge badge-primary"></span>
+                                </a>
+
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/logout">
+                                    <i class="si si-logout mr-5"></i> Sign Out
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="page-header-search" class="overlay-header">
+                    <div class="content-header content-header-fullrow">
+
+                    </div>
+                </div>
+                <div id="page-header-loader" class="overlay-header bg-primary">
+                    <div class="content-header content-header-fullrow text-center">
+                        <div class="content-header-item">
+                            <i class="fa fa-sun-o fa-spin text-white"></i>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main id="main-container">
+                <div class="bg-primary">
+                    <div class="bg-pattern bg-black-op-25" style="background-image: url('assets/img/various/bg-pattern.png');">
+                        <div class="content content-top text-center">
+                            <div class="py-50">
+                                <h1 class="font-w700 text-white mb-10">Blog</h1>
+                                <h2 class="h4 font-w400 text-white-op">Our latest news and learning articles.</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <div class="row items-push py-30">
+                        <div class="col-xl-8">
+                        {% if blogs %}
+                            {% for b in post_count %}
+                                    <div class="mb-50">
+                                        <div class="overflow-hidden rounded mb-20" style="">
+                                            <image class="img-fluid" src="media/{{ b.image }}"></image>
+                                        </div>
+                                        <h3 class="h4 font-w700 text-uppercase mb-5">{{ b.title }}</h3>
+                                        <div class="text-muted mb-10">
+                                            <span class="mr-15">
+                                                <i class="fa fa-fw fa-user mr-5"></i>{{ b.which_user }}
+                                                <i class="fa fa-fw fa-calendar mr-5"></i>{{ b.created_at }}
+                                            </span>
+                                        </div>
+                                        <p>{{ b.content|truncatechars:300 }} </p>
+                                        <a class="link-effect font-w600" href="{% url show_post b.id %}">Read More..</a> or
+                                        <a class="link-effect font-w600" href="{% url editpost b.id %}">Edit</a>
+                                        </div>
+
+                            {% endfor %}
+                        {% endif %}
+                        </div>
+                        <!-- Sidebar -->
+                        <div class="col-xl-4">
+                            <!-- Categories -->
+                            <div class="block block-transparent">
+                                <div class="block-header">
+                                    <h3 class="block-title text-uppercase">
+                                        <i class="fa fa-fw fa-list mr-5"></i> Categories
+                                    </h3>
+                                </div>
+                                {% if blogs %}
+                                    <div class="block-content">
+
+                                        <ul class="nav nav-pills flex-column push">
+                                            {% for b in post_count %}
+                                            <li class="nav-item">
+                                                <a class="nav-link d-flex align-items-center justify-content-between" href="javascript:void(0)">
+                                                    <span><i class="fa fa-fw fa-star mr-5"></i> {{ b.category }} </span>
+                                                </a>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Tag Cloud -->
+                            <div class="block block-transparent">
+                                <div class="block-header">
+                                    <h3 class="block-title text-uppercase">
+                                        <i class="fa fa-fw fa-tags mr-5"></i> Tag Cloud
+                                    </h3>
+                                </div>
+                                {% if blogs %}
+                                    <div class="block-content block-content-full">
+                                        {% for b in post_count %}
+                                            <a class="btn btn-sm btn-alt-secondary mb-5" href="javascript:void(0)">
+                                                <i class="fa fa-tag text-muted mr-5"></i>{{ b.tags }}
+                                            </a>
+                                        {% endfor %}
+                                        </div>
+                                {% endif %}
+                            </div>
+                            <!-- END Tag Cloud -->
+                        </div>
+                        <!-- END Sidebar -->
+                    </div>
+                </div>
+                <!-- END Blog and Sidebar -->
+
+                <!-- Inspiring Quotes -->
+                <div class="bg-body-dark">
+                    <div class="content content-full text-center">
+                        <div class="py-30 invisible" data-toggle="appear">
+                            <!-- Quotes Slider (.js-slider class is initialized in Codebase() -> uiHelperSlick()) -->
+                            <!-- For more info and examples you can check out http://kenwheeler.github.io/slick/ -->
+                            <div class="js-slider slick-nav-black" data-autoplay="true" data-autoplay-speed="6000">
+                                <div>
+                                    <div class="h3 font-w700 mb-10">&ldquo; Strive not to be a success, but rather to be of value &rdquo;</div>
+                                    <div class="h4 font-w400 text-muted"><em>Albert Einstein</em></div>
+                                </div>
+                                <div>
+                                    <div class="h3 font-w700 mb-10">&ldquo; Success is where preparation and opportunity meet &rdquo;</div>
+                                    <div class="h4 font-w400 text-muted"><em>Bobby Unser</em></div>
+                                </div>
+                                <div>
+                                    <div class="h3 font-w700 mb-10">&ldquo; Life is really simple, but we insist on making it complicated &rdquo;</div>
+                                    <div class="h4 font-w400 text-muted"><em>Confucius</em></div>
+                                </div>
+                            </div>
+                            <!-- END Quotes Slider -->
+                        </div>
+                    </div>
+                </div>
+                <!-- END Inspiring Quotes -->
+            </main>
+            <!-- END Main Container -->
+
+            <!-- Footer -->
+            <footer id="page-footer" class="opacity-0">
+                <div class="content py-20 font-size-xs clearfix">
+                    <div class="float-right">
+                        <i class="fa fa-heart text-pulse"></i> by <a class="font-w600" href="#" target="_blank">DCK</a>
+                    </div>
+                    <div class="float-left">
+                        <a class="font-w600" href="#" target="_blank">DCK</a> &copy; <span class="js-year-copy">2018</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- END Footer -->
+        </div>
+        <!-- END Page Container -->
+
+        <!-- Codebase Core JS -->
+        <script src="{{STATIC_URL}}static/js/core/jquery.min.js"></script>
+        <script src="{{STATIC_URL}}static/js/core/popper.min.js"></script>
+        <script src="{{STATIC_URL}}static/js/core/bootstrap.min.js"></script>
+        <script src="{{STATIC_URL}}static/js/core/jquery.slimscroll.min.js"></script>
+        <script src="{{STATIC_URL}}static/js/core/jquery.scrollLock.min.js"></script>
+        <script src="{{STATIC_URL}}static/js/core/jquery.appear.min.js"></script>
+        <script src="{{STATIC_URL}}static/js/core/jquery.countTo.min.js"></script>
+        <script src="{{STATIC_URL}}static/js/core/js.cookie.min.js"></script>
+        <script src="{{STATIC_URL}}static/js/codebase.js"></script>
+
+        <!-- Page Plugins -->
+        <script src="{{STATIC_URL}}static/js/plugins/slick/slick.min.js"></script>
+
+        <!-- Page JS Code -->
+        <script>
+            jQuery(function () {
+                // Init page helpers (Slick Slider plugin)
+                Codebase.helpers('slick');
+            });
+        </script>
+    </body>
+</html>
